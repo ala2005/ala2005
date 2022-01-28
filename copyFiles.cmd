@@ -1,0 +1,1 @@
+copy package.json dist

@@ -1,5 +1,7 @@
 /*
   28.01.22 0.1   initial version
+  10.02.22 0.1.1 changes
+                   parameters renamed
 */
 import { existsSync, readFileSync } from "fs";
 // -----------------------------------------------------------------------------
@@ -17,12 +19,12 @@ export class TextfileReader {
     return [ ...this.gArrFileData ];
   }
   // ---------------------------------------------------------------------------
-  constructor(pFilename: string, pOptions?: TextfileReaderOptions) {
-    this.gFilename = pFilename;
+  constructor(filename: string, options?: TextfileReaderOptions) {
+    this.gFilename = filename;
 
-    if (pOptions != null) {
-      this.gFileEncoding = pOptions.fileEncoding ?? this.gFileEncoding;
-      this.gLineBreak = pOptions.lineBreak ?? this.gLineBreak;
+    if (options != null) {
+      this.gFileEncoding = options.fileEncoding ?? this.gFileEncoding;
+      this.gLineBreak = options.lineBreak ?? this.gLineBreak;
     }
 
     if (existsSync(this.gFilename) === false) {
@@ -37,4 +39,3 @@ export class TextfileReader {
   }
   // ---------------------------------------------------------------------------
 }
-// -----------------------------------------------------------------------------

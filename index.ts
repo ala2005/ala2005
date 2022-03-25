@@ -2,6 +2,8 @@
   28.01.22 0.1   initial version
   10.02.22 0.1.1 changes
                    parameters renamed
+  25.03.22 0.1.2 fixed
+                   bug: tsconfig is set to strip comments
 */
 import { existsSync, readFileSync } from "fs";
 // -----------------------------------------------------------------------------
